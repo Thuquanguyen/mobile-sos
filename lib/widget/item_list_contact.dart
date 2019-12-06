@@ -6,11 +6,16 @@ class ItemContact extends StatelessWidget {
   final String id;
   final String name;
   final String address;
+  final String phone;
+  final String email;
+  final String website;
+  final int confirm;
+  final String about;
   final String urlImage;
   final String dateTime;
   final String numberPhone;
   final bool isFavorite;
-  final int start;
+  final double star;
 
   const ItemContact(
       {Key key,
@@ -20,8 +25,13 @@ class ItemContact extends StatelessWidget {
       this.dateTime,
       this.numberPhone,
       this.isFavorite,
-      this.start,
-      this.id})
+      this.star,
+      this.id,
+      this.phone,
+      this.email,
+      this.website,
+      this.confirm,
+      this.about})
       : super(key: key);
 
   @override
@@ -84,7 +94,7 @@ class ItemContact extends StatelessWidget {
                               ),
                               Center(
                                   child: Text(
-                                "$start Start",
+                                "$star Start",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -128,9 +138,8 @@ class ItemContact extends StatelessWidget {
           ),
         ),
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) {
-            return DetailsStation();
-          }));
+          Navigator.of(context)
+              .pushNamed(DetailsStation.routerName, arguments: id);
         });
   }
 }

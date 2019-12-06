@@ -1,1 +1,1 @@
-[{"fonts":[{"asset":"fonts/MaterialIcons-Regular.ttf"}],"family":"MaterialIcons"},{"family":"packages/cupertino_icons/CupertinoIcons","fonts":[{"asset":"packages/cupertino_icons/assets/CupertinoIcons.ttf"}]}]
+[{"fonts":[{"asset":"fonts/MaterialIcons-Regular.ttf"}],"family":"MaterialIcons"},{"family":"OpenSans-Bold","fonts":[{"asset":"assets/fonts/OpenSans-Bold.ttf"}]},{"family":"Brush","fonts":[{"asset":"assets/fonts/Brush.ttf"}]},{"family":"packages/cupertino_icons/CupertinoIcons","fonts":[{"asset":"packages/cupertino_icons/assets/CupertinoIcons.ttf"}]}]

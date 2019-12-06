@@ -10,7 +10,7 @@ class StationItem {
   String openAndCloseTime;
   double lat;
   double long;
-  int rate;
+  double rate;
   int confirmAddress;
   bool favorite;
   List<dynamic> imageList;
@@ -35,6 +35,4 @@ class StationItem {
       @required this.phoneNumber,
       @required this.supportDetails,
       @required this.workingDay});
-
-
 }
