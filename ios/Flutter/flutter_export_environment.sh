@@ -1,8 +1,8 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/thunq-d1/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/thunq-d1/Desktop/sos/sos_manage"
-export "FLUTTER_TARGET=/Users/thunq-d1/Desktop/sos/sos_manage/lib/main.dart"
+export "FLUTTER_APPLICATION_PATH=/Users/thunq-d1/Desktop/Andorid/mobile-sos"
+export "FLUTTER_TARGET=/Users/thunq-d1/Desktop/Andorid/mobile-sos/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "FLUTTER_FRAMEWORK_DIR=/Users/thunq-d1/flutter/bin/cache/artifacts/engine/ios"

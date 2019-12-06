@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/build/location/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/aapt.iml" filepath="$PROJECT_DIR$/build/location/intermediates/aapt_friendly_merged_manifests/debug/processDebugManifest/aapt/aapt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/build/generated/source/buildConfig/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/build/generated/source/buildConfig/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/src/androidTest/androidTest1.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/src/androidTest/androidTest1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/example/android/app/src/androidTest/androidTest2.iml" filepath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/example/android/app/src/androidTest/androidTest2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/app/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/build/app/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/build/generated/source/buildConfig/buildConfig1.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/build/generated/source/buildConfig/buildConfig1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/google_maps_flutter/generated/source/buildConfig/buildConfig2.iml" filepath="$PROJECT_DIR$/build/google_maps_flutter/generated/source/buildConfig/buildConfig2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/location/generated/source/buildConfig/buildConfig3.iml" filepath="$PROJECT_DIR$/build/location/generated/source/buildConfig/buildConfig3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/bundle-manifest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/location/intermediates/library_manifest/debug/debug.iml" filepath="$PROJECT_DIR$/build/location/intermediates/library_manifest/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/build/intermediates/merged_manifests/debugAndroidTest/debugAndroidTest.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/build/intermediates/merged_manifests/debugAndroidTest/debugAndroidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/location/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/generateDebugRFile.iml" filepath="$PROJECT_DIR$/build/location/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/generateDebugRFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/google_maps_flutter/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/generateDebugRFile1.iml" filepath="$PROJECT_DIR$/build/google_maps_flutter/generated/not_namespaced_r_class_sources/debug/generateDebugRFile/generateDebugRFile1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/src/main/main.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/app/src/main/main1.iml" filepath="$PROJECT_DIR$/android/app/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/android/src/main/main2.iml" filepath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/android/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter/android/src/main/main3.iml" filepath="$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter/android/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/example/android/app/src/main/main4.iml" filepath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/example/android/app/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter/example/android/app/src/main/main5.iml" filepath="$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter/example/android/app/src/main/main5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/merged.iml" filepath="$PROJECT_DIR$/build/location/intermediates/merged_manifests/debug/processDebugManifest/merged/merged.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mobile-sos.iml" filepath="$PROJECT_DIR$/mobile-sos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/app/src/profile/profile.iml" filepath="$PROJECT_DIR$/android/app/src/profile/profile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyApplicationewtr/app/src/test/test.iml" filepath="$PROJECT_DIR$/MyApplicationewtr/app/src/test/test.iml" />
+    </modules>
+  </component>
+</project>

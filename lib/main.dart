@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/widget/main/widget_main.dart';
+import 'package:hello_wolrd/screen/details/widget_details_station.dart';
+import 'package:hello_wolrd/screen/main/widget_main.dart';
 import 'package:provider/provider.dart';
 
 import 'model/Station.dart';
@@ -20,7 +21,8 @@ class MainView extends StatelessWidget {
         ),
         home:  WidgetGoogleMap(),
         routes: {
-          WidgetGoogleMap.routerName : (context) => WidgetGoogleMap()
+          WidgetGoogleMap.routerName : (context) => WidgetGoogleMap(),
+          DetailsStation.routerName : (context) => DetailsStation()
         },
       ),
     );
