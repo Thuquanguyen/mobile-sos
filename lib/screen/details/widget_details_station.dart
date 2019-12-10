@@ -4,6 +4,7 @@ import 'package:hello_wolrd/model/StationItem.dart';
 import 'package:hello_wolrd/screen/details/widget_details_about.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 var arrTitle = [
   "Location",
@@ -51,7 +52,7 @@ Widget _details(BuildContext context, StationItem stationItem) => Container(
               Stack(
                 children: <Widget>[
                   _widgetImage(stationItem.id),
-                  _widgetContentTitle(context,stationItem),
+                  _widgetContentTitle(context, stationItem),
                   _widgetImageTitle(context),
                 ],
               ),
@@ -139,13 +140,25 @@ Widget _customItemList(BuildContext context, int index, List<String> arrContent,
                   title: Text(arrTitle[index], style: TextStyle(fontSize: 17)),
                   subtitle: Visibility(
                       child: index == 5
-                          ? Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.end,children: <Widget>[
-                        Flexible(flex: 2,child: Text(arrContent[index],
-                            maxLines: 2)),
-                        GestureDetector(child: Text("...more",style: TextStyle(color: Colors.blue)),onTap: (){
-                          Navigator.of(context).pushNamed(DetailsAbout.routerName);
-                        },)
-                      ],)
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: <Widget>[
+                                Flexible(
+                                    flex: 2,
+                                    child:
+                                        Text(arrContent[index], maxLines: 2)),
+                                GestureDetector(
+                                  child: Text("...more",
+                                      style: TextStyle(color: Colors.blue)),
+                                  onTap: () {
+                                    Navigator.of(context).push(MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                        new DetailsAbout(about: arrContent[index])));
+                                  },
+                                )
+                              ],
+                            )
                           : Text(arrContent[index],
                               maxLines: 3, overflow: TextOverflow.ellipsis),
                       visible: isTitle),
@@ -155,7 +168,9 @@ Widget _customItemList(BuildContext context, int index, List<String> arrContent,
             child: vbPhone
                 ? RaisedButton(
                     color: Color.fromRGBO(149, 158, 151, 1),
-                    onPressed: () {Navigator.of(context).pushNamed(DetailsAbout.routerName);},
+                    onPressed: () {
+                      UrlLauncher.launch("tel://${arrContent[index]}");
+                    },
                     child:
                         Text("Call Now", style: TextStyle(color: Colors.white)))
                 : Icon(
@@ -166,7 +181,8 @@ Widget _customItemList(BuildContext context, int index, List<String> arrContent,
       ],
     ));
 //Hiển thị nội dung trong title
-Widget _widgetContentTitle(BuildContext context,StationItem stationItem) => Container(
+Widget _widgetContentTitle(BuildContext context, StationItem stationItem) =>
+    Container(
       height: 155,
       width: MediaQuery.of(context).size.width,
       margin: const EdgeInsets.only(left: 20, right: 20, top: 200),

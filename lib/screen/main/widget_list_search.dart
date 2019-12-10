@@ -12,7 +12,7 @@ class SearchList extends StatelessWidget {
     return ListView.builder(
       itemBuilder:(context, index) {
         return Container(
-          child: ItemSearch(name: list[index].name,address: list[index].address),
+          child: ItemSearch(name: list[index].name,address: list[index].address,id: list[index].id),
           decoration: BoxDecoration(
               color: index % 2 == 0 ? Colors.white : Color.fromRGBO(248, 248, 248, 1)),
         );

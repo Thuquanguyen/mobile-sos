@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hello_wolrd/model/Station.dart';
+import 'package:hello_wolrd/screen/main/widget_contact.dart';
 import 'package:hello_wolrd/screen/main/widget_form_search.dart';
-import 'package:hello_wolrd/screen/main/widget_form_setting.dart';
-import 'package:hello_wolrd/screen/main/widget_list_contact.dart';
 import 'package:provider/provider.dart';
 
 class WidgetGoogleMap extends StatelessWidget {
@@ -26,20 +25,30 @@ class WidgetGoogleMap extends StatelessWidget {
             builder: (context, data, child) => Stack(
               children: <Widget>[
                 GoogleMap(
-                  initialCameraPosition: CameraPosition(
-                    target: LatLng(21.025142, 105.833101),
-                    zoom: 14.4746,
-                  ),
+                  initialCameraPosition: data.cameraPosition,
+                  zoomGesturesEnabled: true,
                   mapType: MapType.normal,
-                  onMapCreated: (GoogleMapController controller) {},
+                  onMapCreated: (GoogleMapController controller) {
+
+                  },
+                  onCameraMove: (CameraPosition camera){
+                    data.cameraPosition;
+                  },
                   markers: data.itemsMarker.values.toSet(),
                   myLocationButtonEnabled: false,
+                  onTap: (LatLng lang){
+                    data.setContact();
+                  },
                 ),
-                FormSearch(data: data),
-                FormSetting(),
-                ListContact(
-                  list: data.itemStation,
-                )
+                FormSearch(data: data.itemSearchStation),
+//                FormSetting(),
+                data.isContact
+                    ? (data.station != null
+                        ? ListContact(
+                            stationItem: data.station,
+                          )
+                        : [])
+                    : Container()
               ],
             ),
           );

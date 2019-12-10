@@ -22,9 +22,9 @@ class MainView extends StatelessWidget {
         ),
         home:  WidgetGoogleMap(),
         routes: {
-          DetailsAbout.routerName : (context) => DetailsAbout(),
-          WidgetGoogleMap.routerName : (context) => WidgetGoogleMap(),
-          DetailsStation.routerName : (context) => DetailsStation(),
+          WidgetGoogleMap.routerName : (_) => WidgetGoogleMap(),
+          DetailsStation.routerName : (_) => DetailsStation(),
+          DetailsAbout.routeName : (_) => DetailsAbout(),
         },
       ),
     );
