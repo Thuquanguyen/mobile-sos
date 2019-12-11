@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -30,6 +30,8 @@ dependencies:
   flutter_xlider: ^2.6.1
   smooth_star_rating: ^1.0.3
   url_launcher: ^5.2.0
+  geolocator: ^5.1.4+2
+  location: ^1.4.1
 
 
 dev_dependencies:

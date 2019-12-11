@@ -1,4 +1,4 @@
-//import 'package:app_mobile_sos/model/StationItem.dart';
+//import 'package:app_mobile_sos/model/station_item.dart';
 //
 //class StationData {
 //  final List<StationItem> items = [

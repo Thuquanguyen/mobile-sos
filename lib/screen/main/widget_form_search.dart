@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/inherited/SearchInheritedWidget.dart';
-import 'package:hello_wolrd/model/Station.dart';
-import 'package:hello_wolrd/model/StationItem.dart';
+import 'package:hello_wolrd/model/station.dart';
+import 'package:hello_wolrd/model/station_item.dart';
 import 'package:hello_wolrd/screen/main/widget_list_search.dart';
 import 'package:provider/provider.dart';
 

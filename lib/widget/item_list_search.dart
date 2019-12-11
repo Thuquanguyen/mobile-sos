@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/Station.dart';
+import 'package:hello_wolrd/model/station.dart';
 import 'package:provider/provider.dart';
 
 class ItemSearch extends StatelessWidget {
