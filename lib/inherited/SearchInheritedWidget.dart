@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/StationItem.dart';
+import 'package:hello_wolrd/model/station_item.dart';
 
 class SearchInheritedWidget extends InheritedWidget {
   final List<StationItem> stationItem;

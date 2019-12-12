@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/Station.dart';
-import 'package:hello_wolrd/model/StationItem.dart';
+import 'package:hello_wolrd/model/station.dart';
+import 'package:hello_wolrd/model/station_item.dart';
 import 'package:hello_wolrd/widget/item_list_contact.dart';
 import 'package:provider/provider.dart';
 
@@ -30,11 +30,13 @@ class ListContact extends StatelessWidget {
                   name: stationItem.name,
                   urlImage: stationItem.imageList[0],
                   dateTime: "25/11/2019",
+                  lat: stationItem.lat,
+                  long: stationItem.long,
                   numberPhone: stationItem.phoneNumber[0],
                   address: stationItem.address,
                   star: stationItem.rate,
-                  id: stationItem.id,
-                  isFavorite: true,
+                  idStation: stationItem.id,
+                  isFavorite: Provider.of<Station>(context).isFavorite,
                   phone: stationItem.phoneNumber[0],
                   email: stationItem.email,
                   website: stationItem.website,

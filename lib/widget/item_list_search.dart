@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/Station.dart';
+import 'package:hello_wolrd/model/station.dart';
 import 'package:provider/provider.dart';
 
 class ItemSearch extends StatelessWidget {
   final String name;
   final String address;
-  final String id;
+  final int id;
 
   const ItemSearch({Key key, this.name, this.address, this.id})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       child: Container(
         padding: const EdgeInsets.only(left: 10, right: 10),
         child: Row(
