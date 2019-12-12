@@ -25,24 +25,24 @@ class ItemContact extends StatelessWidget {
   final int isFavorite;
   final double star;
 
-  const ItemContact(
-      {Key key,
-      this.name,
-      this.address,
-      this.urlImage,
-      this.dateTime,
-      this.numberPhone,
-      this.isFavorite,
-      this.star,
-      this.idStation,
-      this.phone,
-      this.email,
-      this.website,
-      this.confirm,
-      this.about,
-      this.lat,
-      this.long,})
-      : super(key: key);
+  const ItemContact({
+    Key key,
+    this.name,
+    this.address,
+    this.urlImage,
+    this.dateTime,
+    this.numberPhone,
+    this.isFavorite,
+    this.star,
+    this.idStation,
+    this.phone,
+    this.email,
+    this.website,
+    this.confirm,
+    this.about,
+    this.lat,
+    this.long,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,11 +76,20 @@ class ItemContact extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               GestureDetector(
-                                  child: Icon(Provider.of<Station>(context).isFavorite==0?Icons.bookmark_border:Icons.bookmark,
+                                  child: Icon(
+                                      Provider.of<Station>(context)
+                                                  .isFavorite ==
+                                              0
+                                          ? Icons.bookmark_border
+                                          : Icons.bookmark,
                                       color: Colors.blue),
                                   onTap: () {
-                                    Provider.of<Station>(context).setFavorite(idStation);
-                                    _save(context);
+                                    Provider.of<Station>(context)
+                                        .setFavorite(idStation);
+                                    Provider.of<Station>(context).isFavorite ==
+                                            0
+                                        ? removeItemStation()
+                                        : _save(context);
                                   }),
                               Text(
                                 "5.5 KM",
@@ -136,8 +145,7 @@ class ItemContact extends StatelessWidget {
                               Center(
                                   child: RaisedButton(
                                       color: Colors.blue,
-                                      onPressed: () {
-                                      },
+                                      onPressed: () {},
                                       child: Text("Call Now",
                                           style:
                                               TextStyle(color: Colors.white))))
@@ -181,4 +189,11 @@ class ItemContact extends StatelessWidget {
     print('inserted row: $id');
   }
 
+  Future<void> removeItemStation() async {
+    DatabaseHelper helper = DatabaseHelper.instance;
+    List<StationItem> stationItem = await helper.deleteStation(idStation);
+    if (stationItem == null) {
+      return;
+    }
+  }
 }
