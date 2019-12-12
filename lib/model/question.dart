@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:hello_wolrd/model/question_item.dart';
 import 'package:http/http.dart' as http;
 
-class Question extends ChangeNotifier {
+class Question with ChangeNotifier {
   List<QuestionItem> _items = [];
   List<QuestionItem> _itemSearch = [];
 

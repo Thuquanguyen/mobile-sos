@@ -25,6 +25,7 @@ class QuestionScreen extends StatelessWidget {
                       builder: (context, data, child) =>
                           QuestionInheritedWidget(
                               questionItem: data.itemSearch,
+                              mContext: context,
                               child: QuestionView()));
                 }
               })),
@@ -77,6 +78,7 @@ class _QuestionViewState extends State<QuestionView> {
                       size: 20,
                     ),
                     onPressed: () {
+                      _controller.text = "";
                       Provider.of<Question>(context).findByTitle("");
                     },
                   ),
@@ -88,6 +90,7 @@ class _QuestionViewState extends State<QuestionView> {
             Expanded(
                 child: QuestionList(
               data: searchInheritedWidget.questionItem,
+              mContext: searchInheritedWidget.mContext,
             ))
           ],
         )

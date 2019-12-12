@@ -27,11 +27,11 @@ var arrIconData = [
 
 // ignore: must_be_immutable
 class DetailsStation extends StatelessWidget {
-  static const routerName = '/details';
+  static const routeName = '/details';
 
   @override
   Widget build(BuildContext context) {
-    final stationId = ModalRoute.of(context).settings.arguments as String;
+    final stationId = ModalRoute.of(context).settings.arguments as int;
     StationItem stationItem = Provider.of<Station>(context).findById(stationId);
     return MaterialApp(
       home: Scaffold(
@@ -264,7 +264,7 @@ Widget _buttonBack(BuildContext context) => Container(
       ),
     );
 //Hiển thị ảnh background
-Widget _widgetImage(String id) => Hero(
+Widget _widgetImage(int id) => Hero(
     tag: "hero$id",
     child: Image.network(
         "https://lh3.googleusercontent.com/ZxUGcGmOFAork_vATfZ7PgJmVP0p_KY3VsceRhBHZ1Jwr9SRWdtMjZjrEXytO21eysOxm0Eu=w1080-h608-p-no-v0"));

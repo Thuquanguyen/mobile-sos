@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/model/question_item.dart';
+import 'package:hello_wolrd/screen/question/screen_details_question.dart';
 
 class ItemListQuestion extends StatelessWidget {
   final QuestionItem questionItem;
+  final BuildContext mcontext;
 
-  const ItemListQuestion({Key key, this.questionItem}) : super(key: key);
+  const ItemListQuestion({Key key, this.questionItem, this.mcontext}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,11 +24,14 @@ class ItemListQuestion extends StatelessWidget {
               )
             ],
             borderRadius: BorderRadius.circular(7.0),
-            border:  Border.all(color: Colors.white)),
+            border: Border.all(color: Colors.white)),
         child: new Column(
           children: <Widget>[
             new ListTile(
-              title: new Text(questionItem.title,style: TextStyle(fontWeight: FontWeight.bold),),
+              title: new Text(
+                questionItem.title,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               subtitle: new Text(questionItem.subTitle),
             ),
             new Container(
@@ -39,8 +45,10 @@ class ItemListQuestion extends StatelessWidget {
           ],
         ),
       ),
-      onTap: (){
-
+      onTap: () {
+        Navigator.of(mcontext).push(MaterialPageRoute(
+            builder: (context) =>
+                DetailsQuestionScreen(questionItem: questionItem)));
       },
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hello_wolrd/model/station.dart';
 import 'package:hello_wolrd/screen/main/widget_contact.dart';
@@ -9,7 +8,7 @@ import 'package:hello_wolrd/screen/main/widget_form_search.dart';
 import 'package:provider/provider.dart';
 
 class WidgetGoogleMap extends StatelessWidget {
-  static const routerName = '/main';
+  static const routeName = '/main';
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +22,6 @@ class MapView extends StatefulWidget {
 }
 
 class _MapViewState extends State<MapView> {
-  Geolocator geolocator = Geolocator();
-  Position userLocation;
-
 
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -53,7 +49,6 @@ class _MapViewState extends State<MapView> {
                   trafficEnabled: true,
                 ),
                 FormSearch(data: data.itemSearchStation),
-//                FormSetting(),
                 data.isContact
                     ? (data.station != null
                         ? ListContact(
@@ -68,15 +63,4 @@ class _MapViewState extends State<MapView> {
       },
     );
   }
-
-//  Future<Position> _getLocation() async {
-//    var currentLocation;
-//    try {
-//      currentLocation = await geolocator.getCurrentPosition(
-//          desiredAccuracy: LocationAccuracy.best);
-//    } catch (e) {
-//      currentLocation = null;
-//    }
-//    return currentLocation;
-//  }
 }
