@@ -108,7 +108,7 @@ class ItemListFavorite extends StatelessWidget {
               child: Center(
                   child: IconButton(
                       icon: Icon(
-                        Icons.bookmark,
+                        Icons.delete_forever,
                         color: Colors.blue,
                       ),
                       onPressed: () {

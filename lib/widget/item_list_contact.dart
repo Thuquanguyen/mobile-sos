@@ -46,6 +46,7 @@ class ItemContact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<Station>(context);
     return InkWell(
         child: Hero(
           tag: "hero$idStation",
@@ -77,17 +78,13 @@ class ItemContact extends StatelessWidget {
                             children: <Widget>[
                               GestureDetector(
                                   child: Icon(
-                                      Provider.of<Station>(context)
-                                                  .isFavorite ==
-                                              0
+                                      provider.isFavorite == 0
                                           ? Icons.bookmark_border
                                           : Icons.bookmark,
                                       color: Colors.blue),
                                   onTap: () {
-                                    Provider.of<Station>(context)
-                                        .setFavorite(idStation);
-                                    Provider.of<Station>(context).isFavorite ==
-                                            0
+                                    provider.setFavorite(idStation);
+                                    provider.isFavorite == 0
                                         ? removeItemStation()
                                         : _save(context);
                                   }),

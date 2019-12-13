@@ -18,11 +18,13 @@ class FABBottomAppBar extends StatefulWidget {
     this.selectedColor,
     this.notchedShape,
     this.onTabSelected,
+    this.topItemText,
   }) {
     assert(this.items.length == 2 || this.items.length == 4);
   }
 
   final List<FABBottomAppBarItem> items;
+  final String topItemText;
   final String centerItemText;
   final double height;
   final double iconSize;
@@ -100,14 +102,19 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
           type: MaterialType.transparency,
           child: InkWell(
             onTap: () {
-              print(index);
               onPressed(index);
             },
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(item.iconData, color: color, size: widget.iconSize),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(item.iconData, color: color, size: widget.iconSize),
+                    index == 2 ? Text("10") : Text("")
+                  ],
+                ),
                 Text(
                   item.text,
                   style: TextStyle(color: color),

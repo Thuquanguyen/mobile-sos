@@ -7,6 +7,7 @@ import 'package:hello_wolrd/screen/favorites/screen_favorite.dart';
 import 'package:hello_wolrd/screen/main/widget_main.dart';
 import 'package:hello_wolrd/screen/menu/screen_menu.dart';
 import 'package:hello_wolrd/screen/navigation/fab_bottom_app_bar.dart';
+import 'package:hello_wolrd/screen/notification/notification_screen.dart';
 import 'package:hello_wolrd/screen/question/screen_details_question.dart';
 import 'package:hello_wolrd/screen/question/screen_question.dart';
 import 'package:hello_wolrd/screen/setting/screen_setting.dart';
@@ -44,10 +45,10 @@ class _MainState extends State<Main> {
           _lastSelected = FavoriteScreen();
           break;
         case 2:
-          _lastSelected = SettingScreen();
+          _lastSelected = NotificationScreen();
           break;
         case 3:
-          _lastSelected = QuestionScreen();
+          _lastSelected = SettingScreen();
           break;
         default:
           _lastSelected = WidgetGoogleMap();
@@ -78,9 +79,9 @@ class _MainState extends State<Main> {
                 FABBottomAppBarItem(iconData: Icons.menu, text: 'Menu'),
                 FABBottomAppBarItem(
                     iconData: Icons.bookmark, text: 'Favorites'),
-                FABBottomAppBarItem(iconData: Icons.settings, text: 'Setting'),
+                FABBottomAppBarItem(iconData: Icons.notifications_active, text: 'Notification'),
                 FABBottomAppBarItem(
-                    iconData: Icons.question_answer, text: 'Question'),
+                    iconData: Icons.settings, text: 'Setting'),
               ],
             ),
             floatingActionButtonLocation:
