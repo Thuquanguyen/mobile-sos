@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/inherited/QuestionInheritedWidget.dart';
 import 'package:hello_wolrd/model/question.dart';
+import 'package:hello_wolrd/screen/menu/screen_menu.dart';
 import 'package:hello_wolrd/screen/question/widget_form_question.dart';
 import 'package:provider/provider.dart';
 
@@ -64,28 +65,33 @@ class _QuestionViewState extends State<QuestionView> {
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(30)),
               ),
-              child: TextFormField(
-                controller: _controller,
-                onChanged: (value) {
-                  Provider.of<Question>(context).findByTitle(value);
-                },
-                decoration: InputDecoration(
-                  hintStyle: TextStyle(fontSize: 17),
-                  hintText: 'Tìm kiếm câu hỏi',
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      Icons.cancel,
-                      size: 20,
+              child: Row(children: <Widget>[
+                IconButton(icon: Icon(Icons.arrow_back_ios,color: Colors.blue,size: 20), onPressed: (){
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => MenuScreen()));
+                }),
+                Expanded(child: TextFormField(
+                  controller: _controller,
+                  onChanged: (value) {
+                    Provider.of<Question>(context).findByTitle(value);
+                  },
+                  decoration: InputDecoration(
+                    hintStyle: TextStyle(fontSize: 17),
+                    hintText: 'Tìm kiếm câu hỏi',
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        Icons.cancel,
+                        size: 20,
+                      ),
+                      onPressed: () {
+                        _controller.text = "";
+                        Provider.of<Question>(context).findByTitle("");
+                      },
                     ),
-                    onPressed: () {
-                      _controller.text = "";
-                      Provider.of<Question>(context).findByTitle("");
-                    },
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.all(14),
                   ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.all(14),
-                ),
-              ),
+                ))
+              ],),
             ),
             Expanded(
                 child: QuestionList(
