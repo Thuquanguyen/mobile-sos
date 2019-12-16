@@ -3,7 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/database/database_helpers.dart';
-import 'package:hello_wolrd/model/station.dart';
+import 'package:hello_wolrd/model/station_provider.dart';
 import 'package:hello_wolrd/model/station_item.dart';
 import 'package:hello_wolrd/screen/details/widget_details_station.dart';
 import 'package:provider/provider.dart';

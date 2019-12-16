@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/data/TabBarData.dart';
 import 'package:hello_wolrd/data/TabBarWidget.dart';
-import 'package:hello_wolrd/model/choice.dart';
+import 'package:hello_wolrd/model/choice_item.dart';
 import 'package:hello_wolrd/model/tab_widget.dart';
 import 'package:hello_wolrd/widget/item_list_tabbar.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:hello_wolrd/model/notification.dart' as noti;
+import 'package:hello_wolrd/model/notification_item.dart';
 
 class ListEvent extends StatelessWidget {
   @override
@@ -16,7 +16,7 @@ class MessaginWidget extends StatefulWidget {
 
 class _MessaginWidgetState extends State<MessaginWidget> {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
-  List<noti.Notification> notification = [];
+  List<NotificationItem> notification = [];
 
   @override
   void initState() {
@@ -26,17 +26,17 @@ class _MessaginWidgetState extends State<MessaginWidget> {
       print("onMessage: $message");
       final notificaiton1 = message['notification'];
       setState(() {
-        notification.add(noti.Notification(
+        notification.add(NotificationItem(
             title: notificaiton1['title'], content: notificaiton1['body']));
       });
     }, onLaunch: (Map<String, dynamic> message) async {
       setState(() {
-        notification.add(noti.Notification(
+        notification.add(NotificationItem(
             title: '$message', content: 'Onlaunch'));
       });
       final notificaiton1 = message['data'];
       setState(() {
-        notification.add(noti.Notification(
+        notification.add(NotificationItem(
             title: 'OnLaunch ${notificaiton1['title']}',
             content: 'Onlaunch ${notificaiton1['body']}'));
       });
@@ -55,7 +55,7 @@ class _MessaginWidgetState extends State<MessaginWidget> {
     ));
   }
 
-  Widget buildMessage(noti.Notification notification) => ListTile(
+  Widget buildMessage(NotificationItem notification) => ListTile(
         title: Text(notification.title),
         subtitle: Text(notification.content,
             maxLines: 3, overflow: TextOverflow.ellipsis),

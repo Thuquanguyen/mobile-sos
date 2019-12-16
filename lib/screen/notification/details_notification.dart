@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/notification.dart' as noti;
+import 'package:hello_wolrd/model/notification_item.dart';
 
 class DetailsNotification extends StatelessWidget {
-  final noti.Notification notification;
+  final NotificationItem notification;
 
   const DetailsNotification({Key key, this.notification}) : super(key: key);
 
@@ -20,19 +20,29 @@ class DetailsNotification extends StatelessWidget {
               }),
         ),
         body: Container(
-          child: ListTile(
-            title: Padding(
-                padding: const EdgeInsets.only(top: 10, bottom: 10),
-                child: Text(
-                  notification.title,
-                  style: TextStyle(fontSize: 18),
+          child: Column(
+            children: <Widget>[
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                      padding: const EdgeInsets.only(top: 10,left: 15),
+                      child: Text(notification.dateTime))),
+              Flexible(
+                  child: ListTile(
+                title: Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                    child: Text(
+                      notification.title,
+                      style: TextStyle(fontSize: 18),
+                    )),
+                subtitle: SingleChildScrollView(
+                    child: Padding(
+                  padding: const EdgeInsets.only(bottom: 60),
+                  child: Text(notification.content,
+                      style: TextStyle(fontSize: 16, wordSpacing: 0.5)),
                 )),
-            subtitle: SingleChildScrollView(
-                child: Padding(
-              padding: const EdgeInsets.only(bottom: 60),
-              child: Text(notification.content,
-                  style: TextStyle(fontSize: 16, wordSpacing: 0.5)),
-            )),
+              ))
+            ],
           ),
         ),
       ),
