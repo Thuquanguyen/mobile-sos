@@ -11,16 +11,19 @@ class ItemListNotification extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
         child: Container(
-          color: data.status?Colors.white:Colors.black12,
+          color: data.status == 1 ? Colors.white : Colors.black12,
           padding: const EdgeInsets.only(top: 10, bottom: 10),
+          margin: const EdgeInsets.only(bottom: 5),
           child: ListTile(
               title: Text(data.title),
               subtitle: Column(
                 children: <Widget>[
-                  Text(data.content,
-                      maxLines: 3, overflow: TextOverflow.ellipsis),
-                  Flexible(child: Container(
-                    padding: const EdgeInsets.only(right: 10,bottom: 10),
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(data.content,
+                          maxLines: 2, overflow: TextOverflow.ellipsis)),
+                  Flexible(
+                      child: Container(
                     child: Align(
                       alignment: Alignment.centerRight,
                       child: Text(

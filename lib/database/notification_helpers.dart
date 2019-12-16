@@ -7,7 +7,7 @@ import 'package:sqflite/sqlite_api.dart';
 import 'package:path/path.dart';
 
 class NotificationHelper {
-  static final _databaseName = "Station.db";
+  static final _databaseName = "Notification.db";
   static final _databaseVersion = 1;
   static final tableName = "NotificationItem";
 
@@ -45,11 +45,11 @@ class NotificationHelper {
   Future _onCreate(Database db, int version) async {
     await db.execute('''
     CREATE TABLE $tableName (
-    $columnId INTEGER PRIMARY KEY,
+    $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
     $columnTitle TEXT NOT NULL,
     $columnContent TEXT NOT NULL,
-    $columnDateTime TEXT NOT NULL
-    $columnStatus BOOLEAN NOT NULL
+    $columnDateTime TEXT NOT NULL,
+    $columnStatus INTEGER NOT NULL
     )
     ''');
   }
@@ -90,8 +90,25 @@ class NotificationHelper {
     return null;
   }
 
+  //Update notification
+  updateNotification(NotificationItem notificationItem) async {
+    final db = await database;
+    var res = await db.update("NotificationItem", notificationItem.toMap(),
+        where: "id = ?", whereArgs: [notificationItem.id]);
+    return res;
+  }
+
+  //Delete notification
   deleteNotificaiton(int id) async {
     Database db = await database;
     db.delete("NotificationItem", where: "id = ?", whereArgs: [id]);
   }
+  getAllClients() async {
+    final db = await database;
+    var res = await db.query("NotificationItem");
+    List<NotificationItem> list =
+    res.isNotEmpty ? res.map((c) => NotificationItem.fromMap(c)).toList() : [];
+    return list.length;
+  }
+
 }

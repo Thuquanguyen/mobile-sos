@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_wolrd/model/notification_provider.dart';
 import 'package:hello_wolrd/model/question_provider.dart';
 import 'package:hello_wolrd/model/sqlite_station.dart';
 import 'package:hello_wolrd/screen/details/widget_details_station.dart';
@@ -62,7 +63,8 @@ class _MainState extends State<Main> {
       providers: [
         ChangeNotifierProvider.value(value: Station()),
         ChangeNotifierProvider.value(value: Question()),
-        ChangeNotifierProvider.value(value: DatabaseStation())
+        ChangeNotifierProvider.value(value: DatabaseStation()),
+        ChangeNotifierProvider.value(value: NotificationProvider())
       ],
       child: MaterialApp(
         theme: ThemeData(

@@ -16,7 +16,6 @@ class DatabaseStation with ChangeNotifier {
     List<StationItem> station = [];
     List<StationItem> stationItem = await helper.queryAllStation();
     if (stationItem == null) {
-      print("ledflsdf dkfdlsfs");
       return;
     } else {
       stationItem.forEach((stationData){
