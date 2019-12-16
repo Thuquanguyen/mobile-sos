@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/choice.dart';
+import 'package:hello_wolrd/model/choice_item.dart';
 
 class TabBarData {
   static const List<Choice> choices = const <Choice>[

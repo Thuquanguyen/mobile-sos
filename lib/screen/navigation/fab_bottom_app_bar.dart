@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hello_wolrd/model/notification_provider.dart';
+import 'package:hello_wolrd/model/station_provider.dart';
+import 'package:provider/provider.dart';
 
 class FABBottomAppBarItem {
   FABBottomAppBarItem({this.iconData, this.text});
@@ -52,10 +55,10 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
   Widget build(BuildContext context) {
     List<Widget> items = List.generate(widget.items.length, (int index) {
       return _buildTabItem(
-        item: widget.items[index],
-        index: index,
-        onPressed: _updateIndex,
-      );
+          item: widget.items[index],
+          index: index,
+          onPressed: _updateIndex
+          );
     });
     items.insert(items.length >> 1, _buildMiddleTabItem());
 
@@ -89,11 +92,11 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     );
   }
 
-  Widget _buildTabItem({
-    FABBottomAppBarItem item,
-    int index,
-    ValueChanged<int> onPressed,
-  }) {
+  Widget _buildTabItem(
+      {FABBottomAppBarItem item,
+      int index,
+      ValueChanged<int> onPressed,
+      }) {
     Color color = _selectedIndex == index ? widget.selectedColor : widget.color;
     return Expanded(
       child: SizedBox(

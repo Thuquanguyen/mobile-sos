@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/question.dart';
+import 'package:hello_wolrd/model/notification_provider.dart';
+import 'package:hello_wolrd/model/question_provider.dart';
 import 'package:hello_wolrd/model/sqlite_station.dart';
 import 'package:hello_wolrd/screen/details/widget_details_station.dart';
 import 'package:hello_wolrd/screen/details/widget_details_about.dart';
@@ -12,7 +13,7 @@ import 'package:hello_wolrd/screen/question/screen_details_question.dart';
 import 'package:hello_wolrd/screen/question/screen_question.dart';
 import 'package:hello_wolrd/screen/setting/screen_setting.dart';
 import 'package:provider/provider.dart';
-import 'model/station.dart';
+import 'model/station_provider.dart';
 
 void main() => runApp(MainView());
 
@@ -62,7 +63,8 @@ class _MainState extends State<Main> {
       providers: [
         ChangeNotifierProvider.value(value: Station()),
         ChangeNotifierProvider.value(value: Question()),
-        ChangeNotifierProvider.value(value: DatabaseStation())
+        ChangeNotifierProvider.value(value: DatabaseStation()),
+        ChangeNotifierProvider.value(value: NotificationProvider())
       ],
       child: MaterialApp(
         theme: ThemeData(

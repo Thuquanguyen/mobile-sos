@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/inherited/QuestionInheritedWidget.dart';
-import 'package:hello_wolrd/model/question.dart';
+import 'package:hello_wolrd/model/question_provider.dart';
 import 'package:hello_wolrd/screen/menu/screen_menu.dart';
 import 'package:hello_wolrd/screen/question/widget_form_question.dart';
 import 'package:provider/provider.dart';

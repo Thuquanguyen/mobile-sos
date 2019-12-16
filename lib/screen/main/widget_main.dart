@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hello_wolrd/model/station.dart';
+import 'package:hello_wolrd/model/station_provider.dart';
 import 'package:hello_wolrd/screen/main/widget_contact.dart';
 import 'package:hello_wolrd/screen/main/widget_form_search.dart';
 import 'package:provider/provider.dart';

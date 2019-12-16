@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/data/TabBarData.dart';
 import 'package:hello_wolrd/data/TabBarWidget.dart';
-import 'package:hello_wolrd/model/choice.dart';
+import 'package:hello_wolrd/model/choice_item.dart';
+import 'package:hello_wolrd/model/notification_provider.dart';
 import 'package:hello_wolrd/model/tab_widget.dart';
 import 'package:hello_wolrd/widget/item_list_tabbar.dart';
+import 'package:provider/provider.dart';
 
 class NotificationScreen extends StatelessWidget {
   @override
@@ -46,7 +48,6 @@ class _NotificationSearchState extends State<NotificationSearch> {
                     padding: const EdgeInsets.all(16),
                     child: Column(
                       children: <Widget>[
-                        widget_search(_controller,tabWidget.index),
                         Flexible(child: ItemListTabBar(tabWidget: tabWidget))
                       ],
                     ));
@@ -54,30 +55,3 @@ class _NotificationSearchState extends State<NotificationSearch> {
     );
   }
 }
-
-Widget widget_search(TextEditingController _controller, int index) =>
-    Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(30)),
-      ),
-      child: TextFormField(
-        controller: _controller,
-        onChanged: (value) {},
-        decoration: InputDecoration(
-          hintStyle: TextStyle(fontSize: 17),
-          hintText: index == 0
-              ? 'Tìm kiếm trạm'
-              : 'Tìm kiếm sự kiện',
-          suffixIcon: IconButton(
-            icon: Icon(
-              Icons.cancel,
-              size: 20,
-            ),
-            onPressed: () {},
-          ),
-          border: InputBorder.none,
-          contentPadding: EdgeInsets.all(14),
-        ),
-      ),
-    );
