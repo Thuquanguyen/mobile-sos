@@ -66,9 +66,9 @@ class ItemContact extends StatelessWidget {
                               name,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            subtitle: Text(address),
+                            subtitle: FittedBox(child: Text(address,maxLines: 2)),
                           ),
-                          flex: 3,
+                          flex: 4,
                         ),
                         Flexible(
                           flex: 1,
@@ -97,7 +97,7 @@ class ItemContact extends StatelessWidget {
                         )
                       ],
                     ),
-                    flex: 2),
+                    flex: 3),
                 Flexible(
                   flex: 3,
                   child: Container(
@@ -116,7 +116,7 @@ class ItemContact extends StatelessWidget {
                               ),
                               Center(
                                   child: Text(
-                                "$star Start",
+                                "$star Star",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -126,26 +126,32 @@ class ItemContact extends StatelessWidget {
                         ),
                         Flexible(
                             flex: 1,
-                            child: ClipOval(
-                                child: Image.network(urlImage,
-                                    fit: BoxFit.cover, width: 76, height: 76))),
+                            child: FittedBox(
+                              child: Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: ClipOval(
+                                      child: Image.network(urlImage,
+                                          fit: BoxFit.cover,
+                                          width: 76,
+                                          height: 76))),
+                            )),
                         Flexible(
                           flex: 1,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Center(
-                                  child: Text(numberPhone,
+                                  child: Padding(padding: const EdgeInsets.only(top: 5),child: Text(numberPhone,
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold))),
-                              Center(
+                                          fontWeight: FontWeight.bold)))),
+                              Flexible(child: Center(
                                   child: RaisedButton(
                                       color: Colors.blue,
                                       onPressed: () {},
                                       child: Text("Call Now",
                                           style:
-                                              TextStyle(color: Colors.white))))
+                                          TextStyle(color: Colors.white)))))
                             ],
                           ),
                         ),

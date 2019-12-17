@@ -29,15 +29,20 @@ class _NotificationViewState extends State<NotificationView> {
     super.initState();
     _firebaseMessaging.configure(
         onMessage: (Map<String, dynamic> message) async {
-          final notificationData = message['notification'];
-          Provider.of<NotificationProvider>(context, listen: false)
-              .addNotificaiton(
-                  notificationData['title'], notificationData['body']);
-        },
-        onLaunch: (Map<String, dynamic> message) async {},
-        onResume: (Map<String, dynamic> message) async {});
+      print("vao day khong");
+      final notificationData = message['notification'];
+      Provider.of<NotificationProvider>(context, listen: false)
+          .addNotificaiton(notificationData['title'], notificationData['body']);
+    }, onLaunch: (Map<String, dynamic> message) async {
+      print("haha");
+    }, onResume: (Map<String, dynamic> message) async {
+      print("kamal");
+    });
     _firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, badge: true, alert: true));
+    _firebaseMessaging.getToken().then((token) {
+      print(token);
+    });
   }
 
   @override
@@ -60,7 +65,7 @@ class _NotificationViewState extends State<NotificationView> {
                       ? Center(child: Text("None Notification!"))
                       : Column(
                           children: <Widget>[
-                            widget_search(_controller,context),
+                            widget_search(_controller, context),
                             Flexible(
                                 child: Container(
                                     height: MediaQuery.of(context).size.height,
@@ -106,7 +111,9 @@ class _NotificationViewState extends State<NotificationView> {
         });
   }
 
-  Widget widget_search(TextEditingController _controller,BuildContext context) => Container(
+  Widget widget_search(
+          TextEditingController _controller, BuildContext context) =>
+      Container(
         decoration: BoxDecoration(
           color: Colors.white,
         ),
@@ -125,8 +132,9 @@ class _NotificationViewState extends State<NotificationView> {
                 size: 20,
               ),
               onPressed: () {
-                _controller.text= "";
-                Provider.of<NotificationProvider>(context).findNameNotification("");
+                _controller.text = "";
+                Provider.of<NotificationProvider>(context)
+                    .findNameNotification("");
               },
             ),
             border: InputBorder.none,

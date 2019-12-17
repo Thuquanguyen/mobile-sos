@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_wolrd/model/station_provider.dart';
 import 'package:hello_wolrd/model/station_item.dart';
@@ -76,13 +77,12 @@ Widget _content(BuildContext context, StationItem stationItem) => Container(
               padding: const EdgeInsets.all(10),
               child: Row(
                 children: <Widget>[
-                  Expanded(
-                      child: Text("Station Infomation",
-                          style: TextStyle(fontSize: 18))),
+                  Expanded(child: FittedBox(child: Text("Station Infomation"))),
                   Expanded(
                       child: Align(
                     alignment: Alignment.centerRight,
-                    child: SmoothStarRating(
+                    child: FittedBox(
+                        child: SmoothStarRating(
                       allowHalfRating: false,
                       starCount: 5,
                       rating: stationItem.rate,
@@ -90,7 +90,7 @@ Widget _content(BuildContext context, StationItem stationItem) => Container(
                       color: Colors.green,
                       spacing: 0.0,
                       borderColor: Colors.green,
-                    ),
+                    )),
                   ))
                 ],
               )),
@@ -147,14 +147,16 @@ Widget _customItemList(BuildContext context, int index, List<String> arrContent,
                                 Flexible(
                                     flex: 2,
                                     child:
-                                        Text(arrContent[index], maxLines: 2)),
+                                        Text(arrContent[index], maxLines: 3)),
                                 GestureDetector(
                                   child: Text("...more",
                                       style: TextStyle(color: Colors.blue)),
                                   onTap: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-                                        builder: (BuildContext context) =>
-                                        new DetailsAbout(about: arrContent[index])));
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                new DetailsAbout(
+                                                    about: arrContent[index])));
                                   },
                                 )
                               ],
@@ -197,15 +199,16 @@ Widget _widgetContentTitle(BuildContext context, StationItem stationItem) =>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Text(
-                  stationItem.name,
-                  style: TextStyle(fontSize: 20),
-                ),
+                AutoSizeText(stationItem.name,
+                    maxFontSize: 22,
+                    minFontSize: 18,
+                    overflow: TextOverflow.ellipsis),
                 Container(
-                  child: Text(
+                  child: AutoSizeText(
                     "Mon-Fri",
-                    style: TextStyle(fontSize: 20),
-                  ),
+                      maxFontSize: 20,
+                      minFontSize: 18,
+                      overflow: TextOverflow.ellipsis)
                 ),
                 Text(
                   stationItem.openAndCloseTime,

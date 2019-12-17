@@ -16,7 +16,7 @@ class MenuScreen extends StatelessWidget {
           children: <Widget>[
             Text("Menu", style: TextStyle(fontSize: 20, color: Colors.blue)),
             Container(margin: EdgeInsets.only(top: 10),child: SizedBox(height: 2,width: width,),color: Colors.blue,),
-            ListMenu()
+            Flexible(child: ListMenu())
           ],
         ),
       )),

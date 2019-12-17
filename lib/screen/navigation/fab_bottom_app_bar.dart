@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hello_wolrd/model/notification_provider.dart';
-import 'package:hello_wolrd/model/station_provider.dart';
-import 'package:provider/provider.dart';
 
 class FABBottomAppBarItem {
   FABBottomAppBarItem({this.iconData, this.text});
@@ -14,7 +11,7 @@ class FABBottomAppBar extends StatefulWidget {
   FABBottomAppBar({
     this.items,
     this.centerItemText,
-    this.height: 50.0,
+    this.height: 60.0,
     this.iconSize: 24.0,
     this.backgroundColor,
     this.color,
@@ -103,27 +100,32 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
         height: widget.height,
         child: Material(
           type: MaterialType.transparency,
-          child: InkWell(
-            onTap: () {
-              onPressed(index);
-            },
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Row(
+          child: Wrap(
+            children: <Widget>[
+              Padding(child: InkWell(
+                onTap: () {
+                  onPressed(index);
+                },
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Icon(item.iconData, color: color, size: widget.iconSize),
-                    index == 2 ? Text("10") : Text("")
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(item.iconData, color: color, size: widget.iconSize),
+                        index == 2 ? Text("10") : Text("")
+                      ],
+                    ),
+                    FittedBox(child: Text(
+                      item.text,
+                      style: TextStyle(color: color),
+                    ),)
                   ],
                 ),
-                Text(
-                  item.text,
-                  style: TextStyle(color: color),
-                )
-              ],
-            ),
+              ),padding: const EdgeInsets.only(top: 10))
+            ],
           ),
         ),
       ),
