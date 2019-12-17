@@ -17,7 +17,7 @@ class ListContact extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Container(
             alignment: Alignment.bottomCenter,
-            height: MediaQuery.of(context).size.height / 4.5,
+            height: MediaQuery.of(context).size.height / 4,
             width: MediaQuery.of(context).size.width,
             child: Align(
               alignment: Alignment.bottomCenter,
