@@ -50,11 +50,7 @@ class ItemContact extends StatelessWidget {
     return InkWell(
         child: Hero(
           tag: "hero$idStation",
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(10))),
+          child: Card(
             child: Column(
               children: <Widget>[
                 Flexible(

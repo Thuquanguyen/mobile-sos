@@ -12,6 +12,7 @@ class ItemListTabBar extends StatelessWidget {
       color: Colors.white,
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[tabWidget.widget],

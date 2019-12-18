@@ -26,7 +26,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val title = data["title"].toString()
         val body = data["body"].toString()
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val CHENAL_ID = "com.com.example.biboapp.test"
+        val CHENAL_ID = "com.example.app_mobile_sos.test"
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationChannel = NotificationChannel(CHENAL_ID, "Notification", NotificationManager.IMPORTANCE_DEFAULT)
             notificationChannel.description = "EDM Channel"
@@ -48,7 +48,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     private fun showNotification(title: String?, body: String?) {
         val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val NOTIFICATION_CHENAL_ID = "com.com.example.sos_app"
+        val NOTIFICATION_CHENAL_ID = "com.example.app_mobile_sos.test"
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationChannel = NotificationChannel(NOTIFICATION_CHENAL_ID, "Notification", NotificationManager.IMPORTANCE_DEFAULT)
             notificationChannel.description = "EDM Channel"

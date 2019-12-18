@@ -12,14 +12,14 @@
 
 
     <application
-        android:name="io.flutter.app.FlutterApplication"
-        android:icon="@mipmap/ic_launcher"
-        android:label="app_mobile_sos"
+        android:name=".Application"
+        android:icon="@drawable/sos"
+        android:label="SOS Traffic"
         tools:ignore="GoogleAppIndexingWarning">
         <meta-data android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDG6eb1ZZkM6jY_8vgY4C-KNJVMCLnS0yw" />
         <activity
-            android:name=".com.example.app_mobile_sos.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
@@ -28,8 +28,6 @@
             <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
                 android:resource="@drawable/common_google_signin_btn_icon_dark" />
-            <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-                 notification message. See README(https://goo.gl/6BKBk7) for more. -->
             <meta-data
                 android:name="com.google.firebase.messaging.default_notification_color"
                 android:resource="@color/common_google_signin_btn_text_dark" />
@@ -50,8 +48,7 @@
             </intent-filter>
         </activity>
         <service
-            android:name=".MyFirebaseMessagingService"
-            android:exported="false">
+            android:name=".MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

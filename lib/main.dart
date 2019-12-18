@@ -12,6 +12,7 @@ import 'package:hello_wolrd/screen/notification/notification_screen.dart';
 import 'package:hello_wolrd/screen/question/screen_details_question.dart';
 import 'package:hello_wolrd/screen/question/screen_question.dart';
 import 'package:hello_wolrd/screen/setting/screen_setting.dart';
+import 'package:hello_wolrd/screen/setting/screen_setting_account.dart';
 import 'package:provider/provider.dart';
 import 'model/station_provider.dart';
 
@@ -101,6 +102,7 @@ class _MainState extends State<Main> {
           WidgetGoogleMap.routeName: (_) => WidgetGoogleMap(),
           DetailsStation.routeName: (_) => DetailsStation(),
           DetailsAbout.routeName: (_) => DetailsAbout(),
+          ScreenSettingAccount.pageRouter: (_) => ScreenSettingAccount(),
         },
         onUnknownRoute: (setting) {
           return MaterialPageRoute(builder: (ctx) => WidgetGoogleMap());

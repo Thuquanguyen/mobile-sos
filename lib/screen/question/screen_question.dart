@@ -26,7 +26,6 @@ class QuestionScreen extends StatelessWidget {
                       builder: (context, data, child) =>
                           QuestionInheritedWidget(
                               questionItem: data.itemSearch,
-                              mContext: context,
                               child: QuestionView()));
                 }
               })),
@@ -35,16 +34,16 @@ class QuestionScreen extends StatelessWidget {
 }
 
 class QuestionView extends StatefulWidget {
+  QuestionView({Key key}) : super(key: key);
   @override
   _QuestionViewState createState() => _QuestionViewState();
 }
 
 class _QuestionViewState extends State<QuestionView> {
-  var _controller = TextEditingController();
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final searchInheritedWidget = QuestionInheritedWidget.of(context);
     return Stack(
       children: <Widget>[
         new Container(
@@ -83,6 +82,7 @@ class _QuestionViewState extends State<QuestionView> {
                         size: 20,
                       ),
                       onPressed: () {
+                        print("vaof day");
                         _controller.text = "";
                         Provider.of<Question>(context).findByTitle("");
                       },
@@ -90,13 +90,12 @@ class _QuestionViewState extends State<QuestionView> {
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.all(14),
                   ),
-                ))
+                )),
               ],),
             ),
             Expanded(
                 child: QuestionList(
-              data: searchInheritedWidget.questionItem,
-              mContext: searchInheritedWidget.mContext,
+              data: QuestionInheritedWidget.of(context).questionItem,
             ))
           ],
         )

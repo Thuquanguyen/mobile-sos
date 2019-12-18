@@ -1,4 +1,4 @@
-package com.example.app_mobile_sos.com.example.app_mobile_sos
+package com.example.app_mobile_sos
 
 import android.os.Bundle
 

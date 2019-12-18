@@ -3,11 +3,9 @@ import 'package:hello_wolrd/model/question_item.dart';
 
 class QuestionInheritedWidget extends InheritedWidget {
   final List<QuestionItem> questionItem;
-  final BuildContext mContext;
 
   const QuestionInheritedWidget({
     Key key,
-    @required this.mContext,
     @required this.questionItem,
     @required Widget child,
   }) : super(key: key, child: child);

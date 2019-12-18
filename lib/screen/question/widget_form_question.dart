@@ -4,9 +4,8 @@ import 'package:hello_wolrd/widget/item_list_question.dart';
 
 class QuestionList extends StatelessWidget {
   final List<QuestionItem> data;
-  final BuildContext mContext;
 
-  const QuestionList({Key key, this.data, this.mContext}) : super(key: key);
+  const QuestionList({Key key, this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,6 @@ class QuestionList extends StatelessWidget {
         itemBuilder: (context, index) {
           return ItemListQuestion(
             questionItem: data[index],
-            mcontext: mContext,
           );
         });
   }

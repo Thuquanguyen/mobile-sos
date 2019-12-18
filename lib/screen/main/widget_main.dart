@@ -45,7 +45,7 @@ class _MapViewState extends State<MapView> {
                     data.setContact();
                   },
                   myLocationEnabled: true,
-                  myLocationButtonEnabled: false,
+                  myLocationButtonEnabled: true,
                   trafficEnabled: true,
                 ),
                 FormSearch(data: data.itemSearchStation),

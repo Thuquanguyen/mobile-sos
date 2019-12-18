@@ -24,6 +24,12 @@ class _NotificationViewState extends State<NotificationView> {
   List<NotificationItem> data = [];
   TextEditingController _controller;
 
+// ignore: missing_return
+  Future<dynamic> myBackgroundMessageHandler(
+      Map<String, dynamic> message) async {
+    return Future<void>.value();
+  }
+
   @override
   void initState() {
     super.initState();
@@ -41,7 +47,7 @@ class _NotificationViewState extends State<NotificationView> {
     _firebaseMessaging.requestNotificationPermissions(
         const IosNotificationSettings(sound: true, badge: true, alert: true));
     _firebaseMessaging.getToken().then((token) {
-      print(token);
+      print("Token : $token");
     });
   }
 
