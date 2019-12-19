@@ -6,34 +6,46 @@ class FAQScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "How does this work?",
-                      style: TextStyle(color: Colors.blue, fontSize: 18),
-                    )),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: width / 4),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "FAQ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          child: Container(
+              child: Stack(
+                children: <Widget>[
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "How does this work?",
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 18),
+                            )),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: width / 4),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            "FAQ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 30),
+                          ),
+                        ),
+                      ),
+                      Expanded(child: ListFAQ())
+                    ],
                   ),
-                ),
+                  IconButton(
+                      icon: Icon(Icons.arrow_back_ios,color: Colors.blue,size: 18,),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      })
+                ],
               ),
-              Expanded(child: ListFAQ())
-            ],
-          ),
+              color: Colors.white),
         ),
       ),
     );
@@ -72,7 +84,7 @@ class _ListFAQState extends State<ListFAQ> {
             );
           },
           body: Padding(
-              padding: const EdgeInsets.only(left: 15,bottom: 10),
+              padding: const EdgeInsets.only(left: 15, bottom: 10, right: 15),
               child: Align(
                   alignment: Alignment.topLeft,
                   child: Text(item.expandedValue))),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_wolrd/screen/address/screen_add_address.dart';
 import 'package:hello_wolrd/screen/faq/screen_faq.dart';
 import 'package:hello_wolrd/screen/question/screen_question.dart';
 
@@ -18,6 +19,9 @@ class ItemListMenu extends StatelessWidget {
         } else if (title == "FAQ") {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => FAQScreen()));
+        } else if (title == "Add Address") {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddAddressScreen()));
         }
       },
       child: Container(
