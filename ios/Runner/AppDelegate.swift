@@ -13,7 +13,8 @@ import Firebase
     UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
   }
     FirebaseApp.configure()
-    GMSServices.provideAPIKey("AIzaSyBCZtH8k1SqBpcV-7gsV4MNr6gvcSjsDQY")
+    //GMSServices.provideAPIKey("AIzaSyBCZtH8k1SqBpcV-7gsV4MNr6gvcSjsDQY")
+    GMSServices.provideAPIKey("AIzaSyCxhNje85NaUiBJjy2VPU5iHgwh1snxWyE")
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
